@@ -1,0 +1,35 @@
+<p-menubar *ngIf="!isLoginPage()" [model]="menuItems" class="app-menubar">
+  <ng-template pTemplate="start">
+    <div class="brand">
+      <i class="pi pi-briefcase brand-icon"></i>
+      <span class="app-title">EmployeeHub</span>
+    </div>
+
+
+  </ng-template>
+
+<ng-template pTemplate="end">
+  <div class="navbar-end">
+    <div *ngIf="isLoggedIn()" class="user-actions">
+      <i class="pi pi-user"></i>
+      <span class="username">
+        {{ getCurrentUser()?.username | uppercase }}
+      </span>
+      <button
+        pButton
+        type="button"
+        icon="pi pi-sign-out"
+        label="Logout"
+        class="p-button-danger logout-navbar-btn"
+        (click)="logout()"
+        style="margin-left: 1rem; border-radius: 8px;"
+      ></button>
+    </div>
+  </div>
+</ng-template>
+</p-menubar>
+
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>

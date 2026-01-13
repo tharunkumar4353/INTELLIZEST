@@ -1,0 +1,89 @@
+<p-card header="Employee Management" class="employee-card">
+  
+  <!-- Top controls: Search + Add -->
+  <div class="controls p-d-flex p-ai-center p-jc-between p-mb-4">
+    
+    <!-- Search bar -->
+    <div class="p-inputgroup search-group">
+      <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+      <input
+        pInputText
+        [(ngModel)]="searchTerm"
+        (input)="onSearch()"
+        placeholder="Search by name, position, or department"
+      />
+      <button
+      style="margin-left: 10px;"
+        pButton
+        icon="pi pi-plus"
+        label="Add Employee"
+        class="p-button-success add-btn"
+        (click)="addEmployee()"
+        *ngIf="role === 'admin' || role === 'manager'"
+      ></button>
+    </div>
+  </div>
+
+  <!-- Loading spinner -->
+  <p-progressSpinner
+    *ngIf="isLoading$ | async"
+    styleClass="p-d-block p-mx-auto"
+    strokeWidth="4"
+  ></p-progressSpinner>
+
+  <!-- No data message -->
+  <p-message
+    *ngIf="!(isLoading$ | async) && employees.length === 0"
+    severity="info"
+    text="No Employees Found"
+  ></p-message>
+
+  <!-- Employee table -->
+  <div *ngIf="!(isLoading$ | async) && employees.length > 0">
+    <p-table
+      [value]="dataSource.data"
+      [paginator]="true"
+      [rows]="5"
+      
+      responsiveLayout="scroll"
+      class="employee-table"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Department</th>
+          <th *ngIf="role !== 'employee'">Actions</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-employee>
+        <tr>
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.position }}</td>
+          <td>{{ employee.department }}</td>
+          <td *ngIf="role !== 'employee'" class="actions-cell">
+            <button
+              pButton
+              icon="pi pi-pencil"
+              class="p-button-rounded p-button-text p-mr-1 edit-btn"
+              (click)="editEmployee(employee)"
+              *ngIf="role === 'admin'"
+              pTooltip="Edit Employee"
+            ></button>
+            <button
+              pButton
+              icon="pi pi-trash"
+              class="p-button-rounded p-button-danger p-button-text delete-btn"
+              (click)="deleteEmployee(employee.id)"
+              *ngIf="role === 'admin' || role === 'manager'"
+              pTooltip="Delete Employee"
+            ></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</p-card>

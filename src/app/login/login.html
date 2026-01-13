@@ -1,0 +1,65 @@
+<div class="login-wrapper">
+  <p-card class="login-card">
+    <ng-template pTemplate="header">
+      <div class="login-header">
+        <i class="pi pi-lock"></i>
+        <h2>Welcome</h2>
+        <span>Please sign in to continue</span>
+      </div>
+    </ng-template>
+
+    <div class="demo-box">
+      <h4>Demo Credentials - username / password</h4>
+      <ul>
+        <li><strong>Admin</strong> — admin / admin <span>Full access</span></li>
+        <li><strong>Manager</strong> — manager / manager <span>Delete only</span></li>
+        <li><strong>Employee</strong> — employee / employee <span>View only</span></li>
+      </ul>
+    </div>
+
+        <div class="demo-box">
+      <h4>DataBase</h4>
+      <ul>
+        <li><strong>cmd</strong>- npx json-server --watch db.json --port 3000</li>
+      </ul>
+    </div>
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      class="p-fluid login-form"
+    >
+      <div class="p-field">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          pInputText
+          formControlName="username"
+          placeholder="Enter username"
+          autocomplete="username"
+        />
+      </div>
+
+      <div class="p-field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          pInputText
+          type="password"
+          formControlName="password"
+          placeholder="Enter password"
+          autocomplete="current-password"
+        />
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Sign In"
+        icon="pi pi-sign-in"
+        [disabled]="!loginForm.valid"
+        class="login-button"
+      ></button>
+    </form>
+  </p-card>
+</div>

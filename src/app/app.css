@@ -1,0 +1,75 @@
+.navbar-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logout-navbar-btn {
+  margin-left: 1rem;
+}
+.app-menubar {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-icon {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.app-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.user-role-badge {
+  margin-left: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Role-based colors */
+.user-role-badge.admin {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.user-role-badge.manager {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.user-role-badge.employee {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.user-actions i {
+  font-size: 1.1rem;
+}
+
+.main-content {
+  padding: 1.5rem 2rem;
+  background: #f9fafb;
+  min-height: calc(100vh - 64px);
+}

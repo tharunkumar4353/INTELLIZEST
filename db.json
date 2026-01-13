@@ -1,0 +1,60 @@
+{
+  "employees": [
+    {
+      "name": "Alice Brown",
+      "position": "QA Engineer",
+      "department": "Quality1233",
+      "id": "4"
+    },
+    {
+      "id": "5",
+      "name": "Charlie Wilson",
+      "position": "DevOps Engineer",
+      "department": "Operations"
+    },
+    {
+      "id": "7",
+      "name": "Edward Miller",
+      "position": "Sales Representative",
+      "department": "Sales"
+    },
+    {
+      "id": "8",
+      "name": "Fiona Garcia",
+      "position": "Marketing Specialist",
+      "department": "Marketing"
+    },
+    {
+      "id": "d913",
+      "name": "tharunkumar",
+      "position": "it",
+      "department": "cse"
+    },
+    {
+      "id": "084b",
+      "name": "john",
+      "position": "hr",
+      "department": "it"
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "role": "admin",
+      "id": "ba57"
+    },
+    {
+      "username": "manager",
+      "password": "manager",
+      "role": "manager",
+      "id": "2575"
+    },
+    {
+      "username": "employee",
+      "password": "employee",
+      "role": "employee",
+      "id": "8fe3"
+    }
+  ]
+}

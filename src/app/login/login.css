@@ -1,0 +1,82 @@
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  padding: 2rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.login-header {
+  text-align: center;
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+.login-header i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.login-header h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.login-header span {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.demo-box {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid #e5e7eb;
+}
+
+.demo-box h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.demo-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.demo-box li {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.demo-box span {
+  color: #6b7280;
+}
+
+.login-form {
+  margin-top: 1rem;
+}
+
+.login-form label {
+  font-weight: 500;
+}
+
+.login-button {
+  margin-top: 1.25rem;
+  height: 44px;
+  font-weight: 600;
+  border-radius: 8px;
+}

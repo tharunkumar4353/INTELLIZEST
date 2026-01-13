@@ -1,0 +1,27 @@
+<p-card class="dashboard-card">
+  <ng-template pTemplate="header">
+    <div class="dashboard-header">
+      <div class="title-group">
+        <h2>Dashboard Overview</h2>
+        <span>Employee performance summary</span>
+      </div>
+
+      <button
+        pButton
+        type="button"
+        label="Employees Table"
+        class="p-button-outlined p-button-info back-button"
+        (click)="goBack()"
+      ></button>
+    </div>
+  </ng-template>
+
+  <div class="chart-container">
+    <p-chart
+      type="line"
+      [data]="data"
+      [options]="options"
+      style="width: 100%;"
+    ></p-chart>
+  </div>
+</p-card>

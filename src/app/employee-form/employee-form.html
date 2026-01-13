@@ -1,0 +1,49 @@
+<div class="form-container">
+  <p-card [header]="isEdit ? 'Edit Employee' : 'Add Employee'" class="employee-card">
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="p-fluid">
+      
+      <div class="form-field">
+        <label for="name">Name</label>
+        <input id="name" pInputText formControlName="name" placeholder="Enter employee name" />
+        <small *ngIf="employeeForm.get('name')?.invalid && employeeForm.get('name')?.touched" class="p-error">
+          Name is required
+        </small>
+      </div>
+
+      <div class="form-field">
+        <label for="position">Position</label>
+        <input id="position" pInputText formControlName="position" placeholder="Enter position" />
+        <small *ngIf="employeeForm.get('position')?.invalid && employeeForm.get('position')?.touched" class="p-error">
+          Position is required
+        </small>
+      </div>
+
+      <div class="form-field">
+        <label for="department">Department</label>
+        <input id="department" pInputText formControlName="department" placeholder="Enter department" />
+        <small *ngIf="employeeForm.get('department')?.invalid && employeeForm.get('department')?.touched" class="p-error">
+          Department is required
+        </small>
+      </div>
+<div class="button-group p-d-flex p-jc-end p-mt-4">
+  <button
+    pButton
+    type="submit"
+    label="Save"
+    icon="pi pi-save"
+    [disabled]="!employeeForm.valid"
+    class="p-button-success p-mr-2"
+  ></button>
+  <button
+    pButton
+    type="button"
+    label="Cancel"
+    icon="pi pi-times"
+    class="p-button-danger"
+    (click)="cancel()"
+  ></button>
+</div>
+
+    </form>
+  </p-card>
+</div>

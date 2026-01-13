@@ -1,0 +1,52 @@
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.employee-card {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.employee-card .p-card-header {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-field {
+  margin-bottom: 1.5rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  transition: border-color 0.3s;
+}
+
+.form-field input:focus {
+  border-color: #3f51b5; /* Primary color */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
+
+.p-error {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+
+
+.button-group button + button {
+  margin-top: 0.5rem; /* 16px gap between buttons */
+}
